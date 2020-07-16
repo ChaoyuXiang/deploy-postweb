@@ -13,3 +13,17 @@ This is a post website implemented by: React, Redux for front-end part, Google O
 - [x] Aoolied Google OAuth and implemented MongoDB to allow user login and save/fetch their posts from database
 - [x] Deplyed through Heroku at [PostWeb](https://posts-cx.herokuapp.com/)
 - [ ] Adding more styling
+
+## App Preview
+- Laptop view 
+  - Login Page
+  ![Login Page](images/loginPage.png)
+  - Posts Page
+  ![Posts Page](images/postPage.png)
+  
+- Mobile view 
+  - Login Page
+  ![Login Page](images/mobile-login.png)
+  - Posts Page
+  ![Posts Page](images/mobile-posts.png)
+
