@@ -8,7 +8,7 @@ import { createStore } from 'redux';
 import reducers from './reducers';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = process.env.PORT;
 
 ReactDOM.render(
   <Provider store={createStore(reducers)}>
