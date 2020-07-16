@@ -23,7 +23,7 @@ This is a post website implemented by: React, Redux for front-end part, Google O
   
 - Mobile view 
   - Login Page
-  ![Login Page](images/mobile-login.png)
+  ![Login Page](images/mobile-login.png | height=100)
   - Posts Page
   ![Posts Page](images/mobile-posts.png)
 
