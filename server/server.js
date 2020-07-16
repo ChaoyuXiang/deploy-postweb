@@ -10,8 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 
-var parentDir = path.normalize(__dirname + "/..");
-app.use(express.static(path.join(parentDir, 'client/build')));
+
 
 const uri = process.env.MONGO_URL;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
@@ -32,15 +31,18 @@ app.use('/api/users', userRouter);
 
 // serve static assets if in production
 
+  
+
+if (process.env.NODE_ENV === 'production') {
+  // Serve static files from the React app
+  var parentDir = path.normalize(__dirname + "/..");
+  app.use(express.static(path.join(parentDir, 'client/build')));
   app.get('*', (req, res) => {
     res.sendFile(path.join(parentDir + '/client/build/index.html'));
   });
-
-// if (process.env.NODE_ENV === 'production') {
-//   // Serve static files from the React app
-//   console.log('reach here');
+  console.log('reach here');
   
-// }
+}
 
 
 
