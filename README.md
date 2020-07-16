@@ -1,5 +1,5 @@
 
-# Post Website [PostWeb](https://posts-cx.herokuapp.com/)
+# [Post Web Application](https://posts-cx.herokuapp.com/)
 
 This is a post website implemented by: React, Redux for front-end part, Google OAuth, MongoDB for backend part.
 
