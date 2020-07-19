@@ -16,10 +16,10 @@ class ShortPost extends React.Component {
     render() {
         return (
             <div className = 'one-post'>
-            <DeleteBt id = {this.props.id}/>
+            <DeleteBt id = {this.props.id}/> <button className = 'post-button' onClick = {()=>this.props.showPopup(this.props.id)}>v</button>
             <p>--{this.props.date} - {this.props.feeling}
             </p>
-            <button className = 'post-button' onClick = {()=>this.props.showPopup(this.props.id)}>v</button>
+            
             </div>
         )
     }

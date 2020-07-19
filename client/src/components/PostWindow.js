@@ -30,7 +30,7 @@ class PostWindow extends React.Component {
         let newPost = {
             userID: this.props.currUser,
             feeling: this.getFeeling(),
-            date: new Date(),
+            date: new Date().toISOString(),
             content: this.state.content,
         }
 

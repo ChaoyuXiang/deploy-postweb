@@ -2,6 +2,7 @@ import React from 'react';
 import ShortPost from './ShortPost';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import DateFilter from './dateFilter';
 
 
 
@@ -36,6 +37,7 @@ class AllPosts extends React.Component {
     render() {
         return (
             <div className='right'>
+            <div style = {{position:'static'}}><DateFilter/></div>
                 <p className='post-title'>{this.state.title}</p>
                 <div className = 'all-posts'> {this.props.posts.map(post => (
                     <ShortPost id={post.id} feeling={post.feeling}

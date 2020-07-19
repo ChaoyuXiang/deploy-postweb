@@ -6,7 +6,7 @@ const postSchema = new Schema({
     userID: {type:String,required:true},
     feeling: {type: String, required: true},
     content: {type: String, required: true},
-    date: {type: Date, required:true}
+    date: {type: String, required:true}
 },{
     timestamps: true, // automatically save when it's created
 });

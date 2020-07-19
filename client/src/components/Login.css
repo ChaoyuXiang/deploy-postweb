@@ -3,7 +3,6 @@
 
 * {
     margin: 0;
-    position: relative;
 }
 
 html,body {
@@ -149,7 +148,6 @@ ul{
         padding: 3%;
     }
     input,button{
-        font-size: 1em;
         margin: 3%;
         height: 2.5em;
     }

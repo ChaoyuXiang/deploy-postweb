@@ -223,7 +223,7 @@ input:checked + label{
         right: 0;
     }
     .all-posts{
-        height: 90%;
+        height: 45%;
         overflow: scroll;
     }
 }

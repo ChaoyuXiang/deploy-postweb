@@ -10,7 +10,7 @@ router.route('/:userID').get((req, res) => {
 router.route('/add').post((req, res) => {
     const feeling = req.body.feeling;
     const content = req.body.content;
-    const date = Date.parse(req.body.date);
+    const date = req.body.date;
     const userID = req.body.userID;
     const newPost = new Post({
         userID,
@@ -24,7 +24,7 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error adding a new post' + err));
 });
 
-router.route('/update').post((req, res) => {
+router.route('/update').put((req, res) => {
     const feeling = req.body.feeling;
     const content = req.body.content;
     const date = req.body.date;
@@ -40,6 +40,22 @@ router.route('/:id').delete((req, res) => {
         .then(() => res.json('Post deleted.'))
         .catch(err => res.status(400).json('Error deleting the post: ' + err));
 });
+
+router.route('/filter').put((req,res)=>{
+    const date = req.body.date;
+    const time = date.slice(0,10);
+    console.log(time);
+    console.log(req.body.id);
+    Post.find({$and:[{date: {$regex: new RegExp('^' + time)}},{userID:req.body.id}]})
+    .then(result => {
+        res.json(result);
+        console.log(result);
+    })
+    .catch(err=> {
+        console.log(err);
+        res.status(400).json('error in filtering');
+    })
+})
 
 module.exports = router;
 

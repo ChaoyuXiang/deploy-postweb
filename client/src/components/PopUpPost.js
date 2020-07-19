@@ -17,7 +17,7 @@ class PopUpPost extends React.Component {
         let newPost = {
             postID: this.props.post.id,
             feeling: this.state.feeling,
-            date: new Date(),
+            date: new Date().toISOString(),
             content: this.state.content,
         }
         return newPost;
@@ -27,13 +27,13 @@ class PopUpPost extends React.Component {
         let curr = this.state.edit;
         if (curr) {
             let newPost = this.generatePost();
-            axios.post('/api/posts/update', newPost)
+            axios.put('/api/posts/update', newPost)
                 .then(res => {
                     console.log(res);
                     let changedPost = {
                         postID: this.props.post.id,
                         feeling: this.state.feeling,
-                        date: newPost.date.toISOString().substring(0, 10),
+                        date: res.data.date.substring(0, 10),
                         content: this.state.content,
                     };
                     console.log(changedPost);
